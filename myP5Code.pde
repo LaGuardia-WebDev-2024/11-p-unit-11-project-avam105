@@ -12,7 +12,7 @@ var flowerY = [];
 
 setup = function() {
    size(600, 450); 
-   background(164, 212, 255);
+   background(45, 81, 128);
   
   
    textSize(40); 
@@ -32,13 +32,23 @@ setup = function() {
    rect(-10, 300, 610, 150);
 };
 
+draw = function() {
+   if(mousePressed){
+       console.log("here")
+       flowerX.push(mouseX);
+       flowerY.push(mouseY);
+       }
+       
+       drawFlowers();
+};
+
 //  leaves
 function drawLeaves() {
    fill(30, 89, 29);
    for (var i = 0; i < leafX.length; i++) {
        text("🍂", leafX[i], leafY[i]);
    }
-}
+};
 
 // flowers
 function drawFlowers() {
@@ -46,14 +56,9 @@ function drawFlowers() {
    for (var i = 0; i < flowerX.length; i++) {
        text("🌸", flowerX[i], flowerY[i]);
    }
-}
-
-draw = function() {
-   if(mousePressed) {
-       flowerX.push(mouseX);
-       flowerY.push(mouseY);
-   }
 };
+
+
 
 
 
